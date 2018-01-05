@@ -21,12 +21,15 @@ function start() {
             case '/show':
                 handlers.show(request, response);
                 break;
+            case '/style.css':
+                handlers.style(request, response);
+                break;
             default:
                 handlers.error(request, response);
         }
     }
 
-    http.createServer(onRequest).listen(9000);
+    http.createServer(onRequest).listen(9090);
 
     console.log("Uruchomiono serwer!".green);
 }
